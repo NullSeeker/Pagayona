@@ -11,6 +11,8 @@ MENU
 
 BODY
    Big Text: Welcome to DogCare (with logo of paw)
+   Your one-stop solution for all your dog's needs!
+   
    Get started ( button ) after the big text.
 
 REGISTRATION PAGE
