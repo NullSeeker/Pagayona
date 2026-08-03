@@ -4,18 +4,18 @@ The website is for those people who have a dog pet. The goal of this website is 
 
 # LANDING PAGE
 
-MENU
+ # MENU
    Hambuger icon -> About Page 
    Anything your dog needs.
    Medical needs, grooming, pet sitters, daycare, and boarding.
 
-BODY
+ # BODY
    Big Text: Welcome to DogCare (with logo of paw)
    Your one-stop solution for all your dog's needs!
    
    Get started ( button ) after the big text.
 
-REGISTRATION PAGE
+ # REGISTRATION PAGE
 name
 email address
 birthdate
@@ -47,7 +47,7 @@ just generate other details like their names etc.
 submit button
 (after submit button go to login page)
 
-LOGIN PAGE
+ # LOGIN PAGE
 Email Address:
 Password:
 
