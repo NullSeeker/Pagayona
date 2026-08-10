@@ -1,33 +1,202 @@
-<html>
-    <head>
-        <title> MY PROFILE </title>
-    </head>
-    <style>
-        body {
-            background-color: #f0f8ff;
-            font-family: Arial, sans-serif;
-            padding: 50px;
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DogCare - Welcome</title>
+  <style>
+    :root {
+      --primary: #0096ab;
+      --primary-hover: #007d8f;
+      --dark: #003a42;
+      --dark-header: #004d58;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --radius: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
 
-        h1 {
-            color: #333;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        p {
-            color: #666;
-            font-size: 18px;
-        }
-    </style>
-    <body>
-        <h1>Welcome to My Profile</h1>
-        <p>Welcome to Loraine's space~</p>
-    </body>
-    <div class="details">
-        <ul>
-            
-                <a href="profile.html" style="color:cornflowerblue"> Profile</a>
-                <a href="hobbies.html" style="color:cornflowerblue"> Hobbies</a>
-            
-        </list>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-main);
+      
+    
+      background: linear-gradient(rgba(0, 58, 66, 0.75), rgba(0, 58, 66, 0.75)), url('dog-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background: rgba(0, 77, 88, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 1.25rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text {
+      display: inline-block;
+    }
+
+    .brand-name {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .brand-sub {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8ce1ed;
+      text-transform: lowercase;
+      margin-top: -4px;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 0.75rem 2rem;
+    }
+
+    details summary {
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .about-info {
+      margin-top: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 1rem;
+      border-radius: 10px;
+      line-height: 1.5;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      padding: 3.5rem 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 550px;
+      width: 100%;
+    }
+
+    .main-brand-name {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+
+    .main-brand-sub {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      text-transform: lowercase;
+      margin-top: -6px;
+      margin-bottom: 2rem;
+    }
+
+    main h1 {
+      font-size: 1.75rem;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      font-weight: 800;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: #ffffff;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0, 150, 171, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 150, 171, 0.45);
+    }
+
+    footer {
+      background-color: rgba(0, 58, 66, 0.95);
+      backdrop-filter: blur(8px);
+      color: #94a3b8;
+      text-align: center;
+      padding: 1.25rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-text">
+      <span class="brand-name">DOGC🐾RE</span>
+      <span class="brand-sub">your one stop needs.</span>
     </div>
+  </header>
+
+  <nav>
+    <details>
+      <summary>Menu (About Us)</summary>
+      <div class="about-info">
+        <p>Anything your dog needs: Medical needs, grooming, pet sitters, daycare, and boarding.</p>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+    <div class="hero-card">
+      <div class="main-brand-name">DOGC🐾RE</div>
+      <div class="main-brand-sub">your one stop needs.</div>
+      <h1>Welcome to DogCare</h1>
+      <p>Your one-stop solution for all your dog's health, grooming, and boarding needs!</p>
+      <a href="regis" class="btn">Get Started</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DogCare. All rights reserved.</p>
+  </footer>
+
+</body>
 </html>
