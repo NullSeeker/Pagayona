@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DogCare - Registration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #f4f8f9;
+      color: #333;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #005b68;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .form-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 550px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-card h2 {
+      color: #005b68;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    fieldset {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #0096ab;
+      padding: 0 0.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 0.65rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .verification-box {
+      background-color: #e0f2f5;
+      border: 1px solid #0096ab;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #005b68;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #0096ab;
+      color: white;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1.05rem;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      background-color: #007888;
+    }
+
+    footer {
+      background-color: #003e47;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DOGC🐾RE</h1>
+  </header>
+
+  <main>
+    <section class="form-card">
+      <h2>Registration</h2>
+      
+      <form action="login.html" method="GET">
+        
+        <fieldset>
+          <legend>Owner Details</legend>
+          
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile No.</label>
+            <input type="tel" id="mobile" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" required>
+          </div>
+        </fieldset>
+
+        <div class="verification-box">
+          A verification link will be sent to your email after registration. Once verified, you may proceed to login.
+        </div>
+
+        <fieldset>
+          <legend>Your Dog Credentials</legend>
+
+          <div class="form-group">
+            <label for="dog-count">How many dogs do you have?</label>
+            <select id="dog-count" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3 or more</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="dog-name-1">Dog 1 Name</label>
+            <input type="text" id="dog-name-1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="dog-breed-1">Breed</label>
+            <input type="text" id="dog-breed-1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="dog-birthdate-1">Birthdate</label>
+            <input type="date" id="dog-birthdate-1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="dog-complications-1">Complications (Optional)</label>
+            <textarea id="dog-complications-1" rows="2"></textarea>
+          </div>
+
+          <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed #ccc;">
+
+          <div class="form-group">
+            <label for="dog-name-2">Dog 2 Name (If applicable)</label>
+            <input type="text" id="dog-name-2">
+          </div>
+
+          <div class="form-group">
+            <label for="dog-breed-2">Breed</label>
+            <input type="text" id="dog-breed-2">
+          </div>
+
+          <div class="form-group">
+            <label for="dog-birthdate-2">Birthdate</label>
+            <input type="date" id="dog-birthdate-2">
+          </div>
+
+          <div class="form-group">
+            <label for="dog-complications-2">Complications (Optional)</label>
+            <textarea id="dog-complications-2" rows="2"></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn-submit">Submit Registration</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DogCare. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

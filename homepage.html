@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DogCare - Homepage</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f8f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #005b68;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    .welcome-banner {
+      background-color: #ffffff;
+      border-left: 6px solid #0096ab;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .welcome-banner h2 {
+      color: #005b68;
+    }
+
+    section {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    section h3 {
+      color: #005b68;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #f4f8f9;
+      padding-bottom: 0.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    article {
+      background: #f4f8f9;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+
+    article h4 {
+      color: #0096ab;
+      margin-bottom: 0.4rem;
+    }
+
+    footer {
+      background-color: #003e47;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DOGC🐾RE</h1>
+    <nav>
+      <a href="#services">Our Services</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    
+    <div class="welcome-banner">
+      <h2>Welcome, User! Thank you for joining us!</h2>
+    </div>
+
+    <section id="services">
+      <h3>Our Services</h3>
+      <div class="services-grid">
+        <article>
+          <h4>Medical Care</h4>
+          <p>Access to our professional veterinary care for your dog's safety and health.</p>
+        </article>
+
+        <article>
+          <h4>Grooming</h4>
+          <p>Full grooming services to keep your dog clean, fresh, and healthy.</p>
+        </article>
+
+        <article>
+          <h4>Pet Sitters & Daycare</h4>
+          <p>Let your dog socialize with other dogs and interact with fellow dog owners.</p>
+        </article>
+
+        <article>
+          <h4>Boarding</h4>
+          <p>Trusted dog lovers to care for your dog while you travel abroad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact Us</h3>
+      <p>Have questions? Reach out to us anytime:</p>
+      <p><strong>Email:</strong> support@dogcare.com</p>
+      <p><strong>Phone:</strong> +1 (800) 123-DOGS</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DogCare. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
