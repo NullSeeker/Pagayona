@@ -11,11 +11,9 @@
       padding: 0;
     }
 
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f4f8f9;
+   body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      background-color: #f4f8f9; 
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -38,7 +36,7 @@
       color: white;
       text-decoration: none;
       margin-left: 1.5rem;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     nav a:hover {
@@ -53,55 +51,62 @@
       width: 100%;
     }
 
-    .welcome-banner {
-      background-color: #ffffff;
-      border-left: 6px solid #0096ab;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-
-    .welcome-banner h2 {
-      color: #005b68;
-    }
-
-    section {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-
-    section h3 {
-      color: #005b68;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #f4f8f9;
-      padding-bottom: 0.5rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-
-    article {
-      background: #f4f8f9;
-      padding: 1rem;
+    .banner {
+      background: white; 
+      padding: 1.5rem; 
+      border-left: 5px solid #0096ab; 
+      margin-bottom: 2rem; 
       border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
-    article h4 {
-      color: #0096ab;
-      margin-bottom: 0.4rem;
+    .banner h2 {
+      color: #005b68;
     }
 
-    footer {
-      background-color: #003e47;
-      color: white;
-      text-align: center;
+    .services-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+      gap: 1.5rem; 
+    }
+    
+    
+    .service-link { 
+      text-decoration: none; 
+      color: inherit; 
+      display: block; 
+    }
+    
+    .card { 
+      background: white; 
+      padding: 1.5rem; 
+      border-radius: 8px; 
+      border-top: 4px solid #0096ab; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08); 
+      transition: transform 0.2s ease, box-shadow 0.2s ease; 
+      height: 100%;
+    }
+    
+    .service-link:hover .card { 
+      transform: translateY(-5px); 
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+      border-top-color: #ff9800; 
+    }
+    
+    .card h3 { 
+      color: #005b68; 
+      margin-bottom: 0.5rem; 
+    }
+    
+    .card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    footer { 
+      background-color: #003e47; 
+      color: white; 
+      text-align: center; 
       padding: 1rem;
     }
   </style>
@@ -109,51 +114,52 @@
 <body>
 
   <header>
-    <h1>DOGC🐾RE</h1>
+    <h1>DOGCARE</h1>
     <nav>
-      <a href="#services">Our Services</a>
-      <a href="#contact">Contact Us</a>
+      <a href="homepage.html">Services</a>
+      <a href="user-dashboard.html">My Profile</a>
+      <a href="landingofnew.html">Logout</a>
     </nav>
   </header>
 
   <main>
-    
-    <div class="welcome-banner">
-      <h2>Welcome, User! Thank you for joining us!</h2>
+    <div class="banner">
+      <h2>Welcome back! Select a service to get started.</h2>
     </div>
-
-    <section id="services">
-      <h3>Our Services</h3>
-      <div class="services-grid">
-        <article>
-          <h4>Medical Care</h4>
-          <p>Access to our professional veterinary care for your dog's safety and health.</p>
+    
+    <div class="services-grid">
+      
+      <a href="#medical-page" class="service-link">
+        <article class="card">
+          <h3>Medical Care</h3>
+          <p>Book a professional veterinary appointment for your dog's safety.</p>
         </article>
+      </a>
 
-        <article>
-          <h4>Grooming</h4>
-          <p>Full grooming services to keep your dog clean, fresh, and healthy.</p>
+      
+      <a href="#grooming-page" class="service-link">
+        <article class="card">
+          <h3>Grooming</h3>
+          <p>Schedule a bath, haircut, and cleanliness session.</p>
         </article>
+      </a>
 
-        <article>
-          <h4>Pet Sitters & Daycare</h4>
-          <p>Let your dog socialize with other dogs and interact with fellow dog owners.</p>
+      
+      <a href="#daycare-page" class="service-link">
+        <article class="card">
+          <h3>Daycare & Sitters</h3>
+          <p>Reserve a spot for socialization with other dogs and owners.</p>
         </article>
+      </a>
 
-        <article>
-          <h4>Boarding</h4>
-          <p>Trusted dog lovers to care for your dog while you travel abroad.</p>
+      
+      <a href="#boarding-page" class="service-link">
+        <article class="card">
+          <h3>Boarding</h3>
+          <p>Book an overnight stay with trusted dog lovers while you travel.</p>
         </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h3>Contact Us</h3>
-      <p>Have questions? Reach out to us anytime:</p>
-      <p><strong>Email:</strong> support@dogcare.com</p>
-      <p><strong>Phone:</strong> +1 (800) 123-DOGS</p>
-    </section>
-
+      </a>
+    </div>
   </main>
 
   <footer>
