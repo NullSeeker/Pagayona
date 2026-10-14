@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DogCare - Book a Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', Arial, sans-serif;
+      background-color: #f7f0e3;
+      color: #1d2b23;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h1, h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: #1f3d2f;
+    }
+
+    header {
+      background-color: #1f3d2f;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1, header h2 {
+      color: #f7f0e3;
+      font-size: 26px;
+    }
+
+    nav a {
+      color: #f7f0e3;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 12px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2f5a45;
+    }
+
+    nav a.cta {
+      background-color: #c2561f;
+    }
+
+    nav a.cta:hover {
+      background-color: #a84614;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #c2561f;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #a84614;
+      transform: scale(1.05);
+    }
+
+    form .btn {
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #1f3d2f;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 12px;
+      background-color: #eadfc8;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: 3px solid #c2561f;
+      background-color: white;
+    }
+
+    .row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .row .form-group {
+      flex: 1;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .banner {
+      background-color: #1f3d2f;
+      padding: 40px;
+      border-radius: 30px;
+      margin-bottom: 32px;
+    }
+
+    .banner h2 {
+      color: #f7f0e3;
+      font-size: 32px;
+    }
+
+    .dash {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .dash aside {
+      flex: 1;
+    }
+
+    .dash .panel {
+      flex: 2;
+    }
+
+    .card, .panel {
+      background-color: white;
+      padding: 24px;
+      border-radius: 24px;
+      box-shadow: 0 4px 15px rgba(31, 61, 47, 0.15);
+      margin-bottom: 24px;
+    }
+
+    .card h2, .panel h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+
+    .empty {
+      background-color: #eadfc8;
+      padding: 16px;
+      border-radius: 16px;
+      color: #5f6b60;
+      font-style: italic;
+    }
+
+    footer {
+      background-color: #1f3d2f;
+      color: #f7f0e3;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      nav a {
+        margin-left: 0;
+      }
+
+      .dash {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .dash aside, .dash .panel {
+        flex: none;
+        width: 100%;
+      }
+
+      .wrap {
+        margin: 24px auto;
+      }
+
+      .banner {
+        padding: 28px 24px;
+      }
+
+      .banner h2 {
+        font-size: 26px;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+      header h1, header h2 {
+        font-size: 22px;
+      }
+
+      nav a {
+        padding: 6px 12px;
+        font-size: 14px;
+      }
+
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .row .form-group {
+        flex: none;
+      }
+
+      .card, .panel {
+        padding: 18px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DOGCARE</h1>
+    <nav>
+      <a href="homepage.html">Services</a>
+      <a href="user-dashboard.html">My Profile</a>
+      <a href="landingofnew.html" class="cta">Logout</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="banner">
+      <h2>Book a service for your dog</h2>
+    </div>
+
+    <div class="dash">
+      <section class="panel">
+        <h2>Appointment Details</h2>
+        <form action="homepage.html" method="GET">
+          <div class="form-group">
+            <label for="booking-service">Service</label>
+            <select id="booking-service" required>
+              <option value="">Choose a service</option>
+              <option value="medical">Medical Care</option>
+              <option value="grooming">Grooming</option>
+              <option value="daycare">Daycare &amp; Sitters</option>
+              <option value="boarding">Boarding</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="booking-dog">Dog Name</label>
+            <input type="text" id="booking-dog" required>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="booking-date">Date</label>
+              <input type="date" id="booking-date" required>
+            </div>
+            <div class="form-group">
+              <label for="booking-time">Time</label>
+              <input type="time" id="booking-time" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="booking-notes">Notes</label>
+            <textarea id="booking-notes" rows="3" placeholder="Anything we should know about your dog?"></textarea>
+          </div>
+          <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+      </section>
+
+      <aside>
+        <section class="card">
+          <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80" alt="Happy dog">
+          <h2>What happens next?</h2>
+          <p class="empty">Your booking starts as Pending. Our team will review it and confirm your appointment.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DogCare. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
