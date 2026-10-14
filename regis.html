@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DogCare - Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
    * { 
       box-sizing: border-box; 
@@ -11,159 +14,588 @@
       padding: 0; 
     }
     
-    body { 
-      font-family: system-ui, -apple-system, sans-serif; 
-      background-color: #f4f8f9; 
-      display: flex; 
-      flex-direction: column; 
-      min-height: 100vh; 
+    body {
+      font-family: 'Nunito', Arial, sans-serif;
+      background-color: #f7f0e3;
+      color: #1d2b23;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+ 
+    main {
+      flex: 1;
+    }
+ 
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: #1f3d2f;
+    }
+ 
+    .promo-banner {
+      background-color: #c2561f;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-weight: bold;
+    }
+ 
+    header {
+      background-color: #1f3d2f;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+ 
+    header h1,
+    header h2 {
+      color: #f7f0e3;
+      font-size: 26px;
+    }
+ 
+    nav a {
+      color: #f7f0e3;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 12px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background-color 0.3s;
+    }
+ 
+    nav a:hover {
+      background-color: #2f5a45;
+    }
+ 
+    nav a.cta {
+      background-color: #c2561f;
+    }
+ 
+    nav a.cta:hover {
+      background-color: #a84614;
+    }
+ 
+    .btn,
+    .btn-primary,
+    .btn-submit {
+      display: inline-block;
+      background-color: #c2561f;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+ 
+    .btn:hover,
+    .btn-primary:hover,
+    .btn-submit:hover {
+      background-color: #a84614;
+      transform: scale(1.05);
+    }
+ 
+    .btn-light {
+      background-color: transparent;
+      border: 2px solid white;
+    }
+    form .btn,
+    .btn-submit {
+      width: 100%;
+      margin-top: 16px;
+    }
+ 
+    .form-group {
+      margin-bottom: 16px;
+    }
+ 
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #1f3d2f;
+    }
+ 
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 12px;
+      background-color: #eadfc8;
+      font-size: 16px;
+      font-family: inherit;
+    }
+ 
+    input:focus,
+    textarea:focus {
+      outline: 3px solid #c2561f;
+      background-color: white;
+    }
+ 
     
-    header { 
-      background-color: #005b68; 
-      color: white; 
-      padding: 1rem; 
-      text-align: center; 
+    .row {
+      display: flex;
+      gap: 16px;
     }
+ 
+    .row .form-group {
+      flex: 1;
+    }
+ 
     
-    header h1 { 
-      font-size: 1.8rem; 
+    .auth {
+      display: flex;
+      min-height: 100vh;
     }
+ 
+    .auth-art {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 40px;
+    }
+ 
+    .art-login { background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=80'); }
+    .art-regis { background-image: url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=80'); }
+    .art-admin { background-image: url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=80'); }
+ 
+    .auth-art blockquote {
+      background-color: rgba(31, 61, 47, 0.85);
+      color: #f7f0e3;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 24px;
+      padding: 20px 24px;
+      border-radius: 20px;
+      max-width: 380px;
+    }
+ 
+    .auth-panel {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+ 
+    .login-card,
+    .form-card {
+      width: 100%;
+      max-width: 420px;
+    }
+ 
+    .login-card h2,
+    .form-card h2 {
+      font-size: 36px;
+      margin-bottom: 6px;
+    }
+ 
+    .lede {
+      color: #5f6b60;
+      margin-bottom: 24px;
+    }
+ 
+    .login-link,
+    .user-link {
+      margin-top: 20px;
+      color: #5f6b60;
+    }
+ 
+    .login-link a,
+    .user-link a {
+      color: #c2561f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+ 
+    .login-link a:hover,
+    .user-link a:hover {
+      text-decoration: underline;
+    }
+ 
     
-    main { 
-      flex: 1; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      padding: 2rem; 
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
     }
+ 
+    .hero-overlay {
+      background-color: rgba(31, 61, 47, 0.75);
+      padding: 100px 40px;
+      color: white;
+    }
+ 
+    .hero-text {
+      max-width: 600px;
+    }
+ 
+    .hero h2 {
+      color: white;
+      font-size: 56px;
+      margin-bottom: 16px;
+    }
+ 
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+ 
+    .hero-note {
+      background-color: #f7f0e3;
+      color: #1d2b23;
+      max-width: 300px;
+      padding: 16px 20px;
+      border-radius: 20px;
+      margin-top: 40px;
+      margin-left: auto;
+      transform: rotate(2deg);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+ 
+    .features {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+ 
+    .features h3 {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+ 
+    .features p {
+      color: #5f6b60;
+      font-size: 18px;
+    }
+ 
+    .tiles {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+ 
+    .tile {
+      flex: 1;
+      min-width: 200px;
+      padding: 24px;
+      border-radius: 24px;
+      text-align: left;
+      transition: transform 0.3s;
+    }
+ 
+    .tile:hover {
+      transform: translateY(-6px);
+    }
+ 
+    .features .tile p {
+      color: inherit;
+      font-size: 16px;
+    }
+ 
+    .tile h4 {
+      color: inherit;
+      font-size: 22px;
+    }
+ 
+    .tile-green  { background-color: #1f3d2f; color: #f7f0e3; }
+    .tile-yellow { background-color: #f2c46d; }
+    .tile-orange { background-color: #c2561f; color: white; }
+    .tile-sand   { background-color: #eadfc8; }
+ 
+    .gallery {
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      display: flex;
+      gap: 16px;
+    }
+ 
+    .gallery img {
+      flex: 1;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+ 
     
-    .form-card { 
-      background: white; 
-      padding: 2.5rem; 
-      border-radius: 8px; 
-      width: 100%; 
-      max-width: 450px; 
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    .wrap {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
     }
+ 
+    .banner {
+      background-color: #1f3d2f;
+      padding: 40px;
+      border-radius: 30px;
+      margin-bottom: 32px;
+    }
+ 
+    .banner h2 {
+      color: #f7f0e3;
+      font-size: 32px;
+    }
+ 
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+ 
+    .service-link {
+      text-decoration: none;
+      color: inherit;
+    }
+ 
+    .service-card {
+      background-color: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(31, 61, 47, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+ 
+    .service-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+ 
+    .service-card .text {
+      padding: 20px;
+    }
+ 
+    .service-link:hover .service-card {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(31, 61, 47, 0.3);
+    }
+ 
+    .dash {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+ 
+    .dash aside {
+      flex: 1;
+    }
+ 
+    .dash .panel {
+      flex: 2;
+    }
+ 
+    .card,
+    .panel {
+      background-color: white;
+      padding: 24px;
+      border-radius: 24px;
+      box-shadow: 0 4px 15px rgba(31, 61, 47, 0.15);
+      margin-bottom: 24px;
+    }
+ 
+    .card h2,
+    .panel h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+ 
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #f2c46d;
+      color: #1f3d2f;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 30px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+ 
+    .info-group {
+      margin-bottom: 10px;
+    }
+ 
+    .empty {
+      background-color: #eadfc8;
+      padding: 16px;
+      border-radius: 16px;
+      color: #5f6b60;
+      font-style: italic;
+    }
+ 
     
-    .form-card h2 { 
-      color: #005b68; 
-      margin-bottom: 1.5rem; 
-      text-align: center; 
+    body.admin {
+      background-color: #eef0ea;
     }
+ 
+    body.admin header {
+      background-color: #16261e;
+    }
+ 
+    .stats {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+ 
+    .stat {
+      flex: 1;
+      min-width: 160px;
+      padding: 20px;
+      border-radius: 20px;
+      background-color: #1f3d2f;
+      color: #f7f0e3;
+    }
+ 
+    .stat-orange { background-color: #c2561f; color: white; }
+    .stat-yellow { background-color: #f2c46d; color: #1f3d2f; }
+ 
+    .stat b {
+      display: block;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 36px;
+    }
+ 
+    .table-scroll {
+      overflow-x: auto;
+    }
+ 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+ 
+    th,
+    td {
+      padding: 14px;
+      text-align: left;
+    }
+ 
+    th {
+      background-color: #eadfc8;
+      color: #1f3d2f;
+    }
+ 
+    tr:hover td {
+      background-color: #f7f0e3;
+    }
+ 
+    .badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+ 
+    .badge.pending   { background-color: #fbe3c4; color: #8a4a0c; }
+    .badge.confirmed { background-color: #d5e8cf; color: #25502f; }
+ 
     
-    .form-group { 
-      margin-bottom: 1.2rem; 
+    footer {
+      background-color: #1f3d2f;
+      color: #f7f0e3;
+      text-align: center;
+      padding: 20px;
     }
+ 
+    body.admin footer {
+      background-color: #16261e;
+    }
+ 
     
-    label { 
-      display: block; 
-      margin-bottom: 0.4rem; 
-      font-weight: bold; 
-      color: #333; 
-    }
-    
-    input { 
-      width: 100%; 
-      padding: 0.75rem; 
-      border: 1px solid #ccc; 
-      border-radius: 4px; 
-      font-size: 1rem; 
-    }
-    
-    .btn { 
-      width: 100%; 
-      background-color: #0096ab; 
-      color: white; 
-      padding: 0.9rem; 
-      border: none; 
-      border-radius: 4px; 
-      font-weight: bold; 
-      font-size: 1.1rem; 
-      cursor: pointer; 
-      margin-top: 1rem; 
-    }
-    
-    .btn:hover { 
-      background-color: #007888; 
-    }
-    
-    .login-link { 
-      text-align: center; 
-      margin-top: 1.5rem; 
-      font-size: 0.9rem; 
-    }
-    
-    .login-link a { 
-      color: #0096ab; 
-      text-decoration: none; 
-      font-weight: bold; 
-    }
-    
-    .login-link a:hover { 
-      text-decoration: underline; 
-    }
-
-    footer { 
-      background-color: #003e47; 
-      color: white; 
-      text-align: center; 
-      padding: 1rem; 
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+      }
+ 
+      .auth,
+      .dash,
+      .gallery {
+        flex-direction: column;
+      }
+ 
+      .auth-art {
+        min-height: 220px;
+      }
+ 
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+ 
+      .hero h2 {
+        font-size: 38px;
+      }
+ 
+      .hero-overlay {
+        padding: 60px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>DOGCARE</h1>
-  </header>
-
-  <main>
-    <section class="form-card">
-      <h2>Create Your Account</h2>
-      
-      
-      <form action="login.html" method="GET">
-        
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name">
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email">
-        </div>
-
-        <div class="form-group">
-          <label for="birthdate">Birthdate</label>
-          <input type="date" id="birthdate" >
-        </div>
-
-        <div class="form-group">
-          <label for="mobile">Mobile No.</label>
-          <input type="tel" id="mobile">
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password">
-        </div>
-
-        <div class="form-group">
-          <label for="confirm-password">Confirm Password</label>
-          <input type="password" id="confirm-password">
-        </div>
-
-        <button type="submit" class="btn">Sign Up</button>
-        
-      </form>
-
-      <div class="login-link">
-        Already have an account? <a href="login.html">Log in here</a>
-      </div>
-    </section>
+   <main class="auth">
+    <aside class="auth-art art-regis">
+      <blockquote>Every good dog deserves a good start.</blockquote>
+    </aside>
+    <div class="auth-panel">
+      <section class="form-card">
+        <h2>Create Your Account</h2>
+        <p class="lede">It takes a minute. You can add your dogs afterwards.</p>
+        <form action="login.html" method="GET">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email">
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="birthdate">Birthdate</label>
+              <input type="date" id="birthdate">
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile No.</label>
+              <input type="tel" id="mobile">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password">
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input type="password" id="confirm-password">
+            </div>
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <div class="login-link">Already have an account? <a href="login.html">Log in here</a></div>
+      </section>
+    </div>
   </main>
 
   <footer>
